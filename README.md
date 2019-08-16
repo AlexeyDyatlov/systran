@@ -32,14 +32,14 @@ In .env, add:
 SYSTRAN_ACCESS_KEY="API_KEY"
 ```
 
-## Translate services
-# Translation
+# Translate services
+## Translation
 Request for translating text is #translate.
 
 ```
 Client.translate('input': "Hello", 'source': "en", 'target': "ru")
 ```
-# Options
+## Options
 ```
 key - access key, optional if key exists in config
 input - text for translation, required
@@ -52,3 +52,5 @@ Bug reports and pull requests are welcome on GitHub at [https://github.com/Alexe
 ## License
 The package is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+## Disclaimer
+Use this package at your own peril and risk.
