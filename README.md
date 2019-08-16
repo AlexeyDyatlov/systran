@@ -1,8 +1,6 @@
 # Systran
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/systran`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+API Wrapper for SYSTRAN translation services with Ruby
 
 ## Installation
 
@@ -20,24 +18,37 @@ Or install it yourself as:
 
     $ gem install systran
 
-## Usage
+## Getting a SYSTRAN API KEY
+To make api requests in Systran you must include access key in request params.
 
-TODO: Write usage instructions here
+Instruction for getting access key is [here](https://platform.systran.net/index)
 
-## Development
+## Configuration
+The default behaviour is to configure using the application environment:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+In .env, add:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+SYSTRAN_ACCESS_KEY="API_KEY"
+```
 
+## Translate services
+# Translation
+Request for translating text is #translate.
+
+```
+Client.translate('input': "Hello", 'source': "en", 'target': "ru")
+```
+# Options
+```
+key - access key, optional if key exists in config
+input - text for translation, required
+source - source language, ISO 639-1 format (like "en"), optional
+target - target language, ISO 639-1 format (like "ru"), required
+```
 ## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/systran. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/AlexeyDyatlov/systran].
 
 ## License
+The package is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Systran project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/systran/blob/master/CODE_OF_CONDUCT.md).
