@@ -1,12 +1,11 @@
 RSpec.describe Systran::Translate do
   let!(:client) { Systran::Client.new }
-  let!(:translate) { client.translate }
 
   context '.translate' do
     context 'for invalid request' do
       let(:bad_client) { Systran::Client.new(access_key: '123456') }
       it 'returns response with error' do
-        response = bad_client.translate(text: 'Hola', target: 'en')
+        response = bad_client.translate(text: 'Hola', source: 'es', target: 'en')
 
         expect(response['error']).to_not eq nil
       end

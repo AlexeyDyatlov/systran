@@ -37,7 +37,7 @@ SYSTRAN_ACCESS_KEY="API_KEY"
 Request for translating text is #translate.
 
 ```
-Client.translate('input': "Hello", 'source': "en", 'target': "ru")
+Client.translate(input: "Hello", source: "en", target: "ru")
 ```
 ## Options
 ```
